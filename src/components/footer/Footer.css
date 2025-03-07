@@ -1,0 +1,46 @@
+footer{
+    
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 1rem;;
+    gap:3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;;
+    margin-top:3rem;
+    
+
+
+}
+.liWithSymbol{
+    display:flex;
+    gap:0.5rem;
+}
+.liText{
+    display: flex;
+    flex-direction: column;;
+}
+ul {
+    list-style-type: none; 
+    padding-left: 0;   
+    
+
+  }
+li{
+    
+    padding-bottom: 1rem;;
+}
+label{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;;
+    
+    
+    
+}
+#language{
+    width: 15rem;;
+    padding: 1rem;;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;;
+    margin-top:1rem;
+}

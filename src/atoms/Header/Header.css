@@ -1,0 +1,6 @@
+.border-all{
+    border: solid black 1px;
+}
+.border-bottom{
+    border-bottom: solid black 1px;
+}
