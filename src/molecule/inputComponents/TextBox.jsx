@@ -9,7 +9,7 @@
 //         </>
 //     )
 
-import InputLabel from "../elements/inputWithLabel/InputLabel";
+import InputLabel from "../inputWithLabel/InputLabel";
 
 
 

@@ -7,28 +7,7 @@
     
 
 }
-#activity h2{
-    font-size:var(--large);
-    margin: 0;;
-}
-#activityHeader{
-    
-    margin-bottom: 1rem;;
 
-}
-#activityHeaderLeft{
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    
-    
-}
-#activityHeaderRight{
-    display: flex;
-    gap:2rem;
-    align-items: center;
-    
-}
 #createPost{
     border-radius: 1.5rem;
     
@@ -45,23 +24,9 @@
 #activities{
     margin-top:1rem;
     display: flex;
-    gap:0.2rem;
+    gap:0.5rem;
 }
-.activityButton{
-    padding: 1rem;;
-    padding-top: 0.5rem;;
-    padding-bottom: 0.5rem;
-    font-size: 1rem;;
-    border-radius: 1rem;
-    border:0;
-    border: solid var(--gray) 1px;
-    cursor: pointer;
 
-}
-.activityButtonActive{
-    background-color: var(--blue);
-    color:white;
-}
 .commentsBody{
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -262,26 +227,16 @@
 .grade{
     font-size: 0.9rem;;
 }
-#education ,#skills,#experience{
-    background-color:white;
-    
-    display: flex;
-    flex-direction: column;
-    border-radius: 1rem;
-    
 
-}
 .material-icons{
     cursor: pointer;
 }
-#skills,#experience{
-    padding:0;
-}
+
 
 
 
 .sectionHeaderLeft{
-    font-size:var(--large);
+    font-size:1.25rem;
     font-weight: 600;
 }
 .sectionHeaderRight{

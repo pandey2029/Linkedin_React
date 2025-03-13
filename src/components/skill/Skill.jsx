@@ -1,27 +1,34 @@
-import "./Skill.css"
-export default function Skill(){
+import Header from "../../atoms/Header/Header"
+import Button from "../../atoms/Button/Button"
+import Icon from "../../atoms/icons/Icon"
+import styles from "./Skill.module.scss"
+import modalEvent from "../../utils/Event"
+export default function Skill({data}){
+    const left=[{type:"text",props:{children:"Skills"}}]
+    const right=[{id:"addEduBtn",type:Button,props:{type:"icon",handleClick:addModal,children:<Icon icon="add"/>}},{id:"editEduBtn",type:Button,props:{type:"icon",children:<Icon icon="edit"/>}}]
+    
+    function addModal(){
+        
+        modalEvent.emit("activeModal","skill")
+    }      
     return(
-        <>
-            <div id="skills" style={{marginTop:"0", marginBottom:"0"}}>
-                <div id="skillsHeader" className="sectionHeader">
-                    <div id="skillsHeaderLeft" className="sectionHeaderLeft">
-                        Skills 
-                    </div>
-                    <div id="skillsHeaderRight" className="sectionHeaderRight">
-                        <i className="material-icons add" id="addSkillBtn">add</i>
-                        <i className="material-icons option">edit</i>
-                    </div>
-                </div>
-                <div id="skillContainer">
-                    <div className="skill" style={{border:"0"}}>C++</div>
-                    <div className="skill">SQL</div>
-                </div>
-                <div id="skillsFooter">
-                    Show all skills
-                    <i className="material-icons option">arrow_forward</i>
-                </div>
-
+        
+          
+        <div id={styles.skills} style={{ marginTop: "0", marginBottom: "0" }}>
+            <Header leftContent={left} rightContent={right} />
+            <div id={styles.skillContainer}>
+                {data.map((skill, index) => (
+                    <div key={index} className={styles.skill}>{skill}</div>
+                ))}
             </div>
-        </>
+            <div className={styles.skillsFooter}>
+                Show all skills
+                <Icon id={styles.option} icon='arrow_forward' />
+            </div>
+        </div>
+
+
+            
+        
     )
 }

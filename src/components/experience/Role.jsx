@@ -1,20 +1,14 @@
 /* eslint-disable react/prop-types */
+import flexStyles from "../../styles/flexStyle.module.scss"
+import styles from "./Experience.module.scss"
 export default function Role({role,duration,location,skills}){
     return(
         
-        <div className="experienceDetail">
-            <div className="role">
-                {role}
-            </div>
-            <div className="duration">
-                {duration}
-            </div>
-            <div className="location">
-                {location}
-            </div>
-            <div className="roleSkills">
-                {skills}
-            </div>
+        <div className={`${styles.experienceDetail} ${flexStyles['.flexColumn-gap-s-left']}`}>
+            <div className={styles.role}>{role}</div>
+            <div className={styles.duration}>{duration}</div>
+            <div className={styles.location}>{location}</div>
+            <div className={styles.roleSkills}>{skills}</div>
         </div>
         
     )

@@ -1,0 +1,40 @@
+@use "./mixins.scss"; 
+
+.flexColumn-gap-l {
+    @include mixins.flex(column, 0.5rem, null, center);
+}
+
+.flexRow-gap-l {
+    @include mixins.flex(row, 0.5rem, center, null);
+}
+.flexColumn-gap-s {
+    @include mixins.flex(column, 0.3rem, null, center);
+}
+
+.flexRow-gap-s {
+    @include mixins.flex(row, 0.3rem, center, center);
+}
+.flexRow-gap-s-left{
+    @include mixins.flex(row, 0.3rem,null, null);
+}
+.flexRow{
+    @include  mixins.flex(row,null,null,null);
+}
+.flexColumn{
+    @include  mixins.flex(column,null,null,null);
+}
+
+.flexRow-gap-l-left {
+    @include mixins.flex(row, 0.5rem, null, null);
+}
+
+.flexColumn-gap-s-left {
+    @include mixins.flex(column, 0.3rem, null, null);
+}
+
+
+.flexColumn-gap-l-left {
+    @include mixins.flex(column, 0.5rem, null, null);
+}
+
+

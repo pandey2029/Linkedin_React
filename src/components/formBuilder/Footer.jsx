@@ -1,8 +1,9 @@
-export default function Footer(){
+import styles from "./Form.module.scss"
+export default function Footer({onClick=()=>{}}){
     return(
         <>
-            <div id="footer">
-                <button id="saveExp" type="submit">save</button>
+            <div id={styles.footer}>
+                <button id={styles.saveExp} type="submit" onClick={onClick}>save</button>
             </div>
         </>
     )

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-export default function Para({text}){
+export default function Para({text,id}){
     return(
-        <p>{text}</p>
+        <p id={id}>{text}</p>
     )
 }

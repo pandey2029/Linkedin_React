@@ -1,13 +1,14 @@
 import Para from "../../../atoms/para/Para"
 import Button from "../../../atoms/Button/Button"
 import Input from "../../../atoms/input/Input"
-
+import compStyles from "../about/AboutData.module.scss"
+import flexStyle from "../../../styles/flexStyle.module.scss"
 import "./SkillAdd.css"
 import { useState } from "react"
 import Flex from "../../../atoms/flex/Flex"
 import Icon from "../../../atoms/icons/Icon"
-export default function SkillAdd(){
-    const [skillList,setSkillList]=useState(['C++','SQL','Js'])
+export default function SkillAdd({skillList,setSkillList}){
+    
     const [active,setActive]=useState(false);
     const [newSkill,setNewSkill]=useState('');
     function handleClick(){
@@ -39,11 +40,11 @@ export default function SkillAdd(){
             {active && <Input eventHandler={{onKeyDown:(e)=>{
                 if(e.key==="Enter"){
                 save()
-            }
+                }
             },
             onChange:(e)=>setNewSkill(e.target.value)
-            }} value={newSkill}/>}
-            {!active && <Button text="add skill" eventHandler={{onClick:handleClick}}/>}
+            }} value={newSkill} attributes={{placeholder:"Add skill",id:compStyles.skillInput}}/>}
+            {!active && <Button id={compStyles.saveSkill} type="secondary" children={<div className={flexStyle['flexRow-gap-s']}><Icon icon="add"/>Add skill</div>} handleClick={handleClick}/>}
 
 
             

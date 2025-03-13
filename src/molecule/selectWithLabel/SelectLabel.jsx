@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import Label from "../label/Label";
-import Select from "../select/Select";
+import Label from "../../atoms/label/Label";
+import Select from "../../atoms/select/Select";
 
 export default function SelectLabel({field,eventHandler={},data,style={},attributes={}}){
     return(

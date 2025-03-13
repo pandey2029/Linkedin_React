@@ -2,30 +2,25 @@ import { useState } from "react"
 import Comments from "../activitySubSection/Comments"
 import Images from "../activitySubSection/Images"
 import Posts from "../activitySubSection/Posts"
-import "./Activity.css"
+import Button from "../../atoms/Button/Button"
+import Icon from "../../atoms/icons/Icon"
+import styles from "./Activity.module.scss"
+import Header from "../../atoms/Header/Header"
 export default function Activity(){
     const [active,setActive]=useState("comments");
-
+    const left=[{type:"text",props:{children:"Activity"}}];
+    const right=[{type:Button,props:{type:"secondary",handleClick:()=>{},children:"Create a post"}},{type:Button,props:{type:"icon",children:<Icon icon="edit"/>}}]
     
     
     return(
         <>
-            <div id="activity">
-                <div id="activityHeader" className="sectionHeader">
-                    <div id="activityHeaderLeft">
-                        <h2>Activity</h2>
-                        <div id="followers">695 followers</div>
-                    </div>
-                    <div id="activityHeaderRight">
-                        <div id="createPost" className="paddingClass">Create Post</div>
-                        <span className="material-icons edit" id="aboutBtn">edit</span>
-                    </div>
-                    
-                </div>
-                <div id="activities">
-                    <button className={`activityButton ${active==="posts" ? "activityButtonActive":""}`} id="postButton"  onClick={()=>setActive("posts")}>Posts</button>
-                    <button className={`activityButton ${active==="comments" ? "activityButtonActive":""}`} id="postButton"  onClick={()=>setActive("comments")}>Comments</button>
-                    <button className={`activityButton ${active==="images" ? "activityButtonActive":""}`} id="postButton"  onClick={()=>setActive("images")}>Images</button>
+            <div id={styles.activity}>
+                
+                <Header leftContent={left} rightContent={right} paddingLR="zero"/>
+                <div id={styles.activities}>
+                    <Button type={active==="posts" ? "primary":"secondary"} id="postButton"  handleClick={()=>setActive("posts")}>Posts</Button>
+                    <Button type={active==="comments" ? "primary":"secondary"} id="postButton"  handleClick={()=>setActive("comments")}>Comments</Button>
+                    <Button type={active==="images" ? "primary":"secondary"} id="postButton"  handleClick={()=>setActive("images")}>Images</Button>
                 </div>
                 {active==="comments" && <Comments/>}  
                 {active==="images" && <Images/>}
@@ -33,7 +28,7 @@ export default function Activity(){
                 {console.log(active)}
                 
 
-                {/* so that function not called immediately */}
+               
 
                 
                 

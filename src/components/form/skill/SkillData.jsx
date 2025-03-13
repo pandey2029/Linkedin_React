@@ -1,18 +1,30 @@
 import Footer from "../../formBuilder/Footer";
 import Header from "../../../atoms/Header/Header";
 import SkillAdd from "../skillAdd/SkillAdd";
+import FormHeader from "../../formBuilder/FormHeader";
+import styles from "../../formBuilder/Form.module.scss"
+import skillStyles from "./SkillData.module.scss"
+import { useEffect, useState } from "react";
+import modalEvent from "../../../utils/Event";
+export default function SkillData({skillData,setSkillData}){
+    const [skillList,setSkillList]=useState(skillData);
 
-export default function SkillData(){
-    const left="Add Skill";
-    const right=(<button id="quit"><i className="material-icons">close</i></button>);
-    return(
-        <div id="modal">
-            <div id="tab">
-                 <Header leftContent={left} rightContent={right}/>
-                
-                <SkillAdd/>
+    function submit(){
+        modalEvent.emit("addSkillData",skillList)
         
-                <Footer/>
+        localStorage.setItem("skillData", JSON.stringify(skillList));
+        modalEvent.emit("activeModal","");
+    }
+    
+    
+    return(
+        <div id={styles.modal}>
+            <div id={styles.tab}>
+                <FormHeader heading={"Add Skill"}/>
+                <div className={skillStyles.wrapper}>
+                    <SkillAdd skillList={skillList} setSkillList={setSkillList}/>
+                </div>
+                <Footer onClick={submit}/>
             </div>
         </div>
     )
