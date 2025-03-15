@@ -1,0 +1,68 @@
+$blue: #0a66c2;
+
+
+@mixin button-base {
+  font-size: 1rem;
+  border-radius: 1rem;
+  border: 0;
+  width: fit-content;
+  
+  
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+
+
+.primary {
+  @include button-base;
+  background-color: $blue;
+  color: white;
+
+  &:hover {
+    background-color: rgb(8, 67, 126);
+  }
+}
+
+
+.secondary {
+  @include button-base;
+  color: $blue;
+  border: solid $blue 2px;
+  background-color: transparent;
+
+  &:hover {
+    border: solid rgb(8, 67, 126) 2px;
+    
+    color: rgb(8, 67, 126);
+    background-color: rgba(10, 102, 194, 0.093);
+  }
+}
+
+
+.tertiary {
+  @include button-base;
+  color: rgba(0, 0, 0, 0.75);
+  border: solid rgba(0, 0, 0, 0.75) 2px;
+  background-color: transparent;
+
+  &:hover {
+    border: solid rgb(0, 0, 0) 2px;
+    color: rgb(0, 0, 0);
+    
+  }
+}
+
+.iconButton{
+    border-radius: 50%;
+    background-color: white;
+    border: 0;
+    padding: 0.5rem;;
+    align-items: center;
+
+    &:hover{
+      background-color: rgba(188, 174, 174, 0.312);
+    }
+}
+

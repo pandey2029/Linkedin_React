@@ -1,0 +1,63 @@
+
+.border-all {
+  border: solid black 1px;
+}
+.border-bottom {
+  border-bottom: solid black 1px;
+}
+@mixin sectionFlex {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  &.border-all {
+    @extend .border-all;
+  }
+  &.border-bottom {
+    @extend .border-bottom;
+  }
+}
+
+
+.sectionHeaderLeft {
+  font-size: 1.25rem;
+  font-weight: 600;
+  @include sectionFlex;
+
+}
+
+.sectionHeaderRight {
+  display: flex;
+  gap: 2rem;
+}
+
+.sectionHeaderLeft-s{
+  font-size: 1rem;
+  font-weight: 600;
+  @include sectionFlex;
+  
+}
+
+.paddingLRZero {
+  padding-left: 0;
+  padding-right: 0;
+}
+.paddingTBZero{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.sectionHeaderLeft-xs{
+  font-size: 1rem;
+  font-weight: 500;
+  @include sectionFlex;
+
+}

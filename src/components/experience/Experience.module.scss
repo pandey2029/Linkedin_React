@@ -1,0 +1,39 @@
+.companyImage{
+    width: 3rem;
+    height: 3rem;
+}
+#experience{
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem; 
+    padding-left: 1rem;
+    padding-right:1rem;
+    padding-bottom: 2rem;
+}
+
+.experienceDetail{
+   
+    padding: 1rem;;
+    padding-left: 2rem;;
+    margin-left:2.5rem;
+    border-left:solid black 1px;
+    position: relative;
+    
+}
+
+
+.experienceDetail::before {
+    content: ''; 
+    top:11%;
+    
+   
+    left:-0.75rem;
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    border:solid white 0.5rem;
+   
+    border-radius: 50%; 
+    background-color: black; 
+  }
