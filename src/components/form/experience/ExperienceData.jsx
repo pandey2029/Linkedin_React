@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Form from "../../formBuilder/Form";
 import { MONTHS, YEAR } from "../../../utils/Constants";
+import modalEvent from "../../../utils/Event";
 
 export default function ExperienceData(){
     const fields=[{type:"input",label:"Title",id:"title",placeholder:"Ex:Sales Manager",rowOrder:1,columnOrder:0},
@@ -38,10 +39,40 @@ export default function ExperienceData(){
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
+    function submitExperience(e) {
+        e.preventDefault()
+        modalEvent.emit("addExperience",formData);
+        const existingData=JSON.parse(localStorage.getItem("experienceData")) || [];
+        const {company,...detail}=formData;
+        
+        const existingIndex = existingData.findIndex(item => item.company === company);
+    
+        if (existingIndex !== -1) {
+           
+            existingData[existingIndex] = {
+                ...existingData[existingIndex],
+                details: [...existingData[existingIndex].details, detail] 
+            };
+        } else {
+            
+            existingData.push({ company, details: [detail] });
+        }
+        localStorage.setItem("experienceData",JSON.stringify(existingData));
+        setFormData(prev => {
+            const resetData = Object.keys(prev).reduce((acc, key) => {
+                acc[key] = "";
+                return acc;
+            }, {});
+            return resetData;
+        });
+    
+        console.log(formData);
+        modalEvent.emit("activeModal", "");
+    }
 
     return (
         <>
-            <Form storageName="experienceData" eventName="addExperience" fields={groupField} formData={formData} handleChange={handleChange} setFormData={setFormData} heading="Add Experience" />
+            <Form storageName="experienceData" eventName="addExperience" fields={groupField} formData={formData} handleChange={handleChange} handleSubmit={submitExperience} setFormData={setFormData} heading="Add Experience" />
         </>
     );
 }

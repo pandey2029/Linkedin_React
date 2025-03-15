@@ -4,7 +4,7 @@
 
 import styles from "./Intro.module.scss"
 import flexStyles from "../../styles/flexStyle.module.scss"
-
+import defaultImage from "../images/defaultPhoto.png"
 import backgroundImage from "../images/backgroundimg.jpg"
 import Image from "../../atoms/img/Image";
 import Button from "../../atoms/Button/Button";
@@ -12,7 +12,32 @@ import Icon from "../../atoms/icons/Icon";
 import modalEvent from "../../utils/Event";
 import ExperienceInfo from "./ExperienceInfo";
 import Header from "../../atoms/Header/Header";
-export default function Intro({handleProfile,profilePhoto,data}){
+import { useEffect, useState } from "react";
+export default function Intro({handleProfile}){
+    const [intro, setIntro] = useState(() => {
+        const data = localStorage.getItem("introData");
+        return data ? JSON.parse(data) : {};
+    });
+    const [profilePhoto,setProfilePhoto]=useState(() => {
+        return JSON.parse(localStorage.getItem("profilePhoto")) || defaultImage;
+    })
+    useEffect(()=>{
+        const addIntroData = (e) => {
+            setIntro(e);   
+        };
+        const addProfilePhotoData=(e)=>{
+            setProfilePhoto(e);
+        }
+        modalEvent.on("addIntro",addIntroData)
+        modalEvent.on("addProfilePhoto",addProfilePhotoData);
+        return ()=>{
+            
+            modalEvent.off("addIntro",addIntroData); 
+            modalEvent.off("addProfilePhoto",addProfilePhotoData);
+               
+        }
+    },[])
+    
     function addModal(){
         
         modalEvent.emit("activeModal","intro")
@@ -25,14 +50,14 @@ export default function Intro({handleProfile,profilePhoto,data}){
                 id: styles.introLeft,
                 className: flexStyles["flexColumn-gap-s-left"],
                 children: [
-                    { type: "div", props: { id: styles.name, children:`${data.firstName} ${data.lastName}` } },
-                    { type: "div", props: { id: styles.headline, children: data.headline } },
+                    { type: "div", props: { id: styles.name, children:`${intro.firstName} ${intro.lastName}` } },
+                    { type: "div", props: { id: styles.headline, children: intro.headline } },
                     {
                         type: "div",
                         props: {
                             id: styles.locationContact,
                             children: [
-                                { type: "div", props: { id: styles.location, children: `${data.city},${data.country}` } },
+                                { type: "div", props: { id: styles.location, children: `${intro.city},${intro.country}` } },
                                 { type: "div", props: { id: styles.contact, children: "Contact Info" } }
                             ]
                         }

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Form from "../../formBuilder/Form";
 import modalEvent from "../../../utils/Event";
 
-export default function IntroData({introData}){
+export default function IntroData(){
     const fields=[
         {type:"input",label:"First Name",id:"firstName",placeholder:"",rowOrder:1,columnOrder:0},
         {type:"input",label:"Last Name",id:"lastName",placeholder:"",rowOrder:2,columnOrder:0},
@@ -22,7 +22,7 @@ export default function IntroData({introData}){
                 [{type:"input",label:"City",id:"city",placeholder:"",rowOrder:7,columnOrder:0}]
                ]
 
-
+    const introData=JSON.parse(localStorage.getItem("introData")) || {}
     const [formData,setFormData]=useState(introData ? introData :{
             firstName:"",
             lastName:"",
@@ -39,11 +39,27 @@ export default function IntroData({introData}){
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
+    function submitIntro(e) {
+        e.preventDefault()
+        modalEvent.emit("addIntro", formData);
+       
+        localStorage.setItem("introData", JSON.stringify(formData));
+        setFormData(prev => {
+            const resetData = Object.keys(prev).reduce((acc, key) => {
+                acc[key] = "";
+                return acc;
+            }, {});
+            return resetData;
+        });
+    
+        console.log(formData);
+        modalEvent.emit("activeModal", "");
+    }
 
     return(
         <>
         
-        <Form storageName="introData" eventName="addIntro" fields={groupField}  formData={formData}  handleChange={handleChange} setFormData={setFormData} heading="Add Intro"/>
+        <Form storageName="introData" eventName="addIntro" fields={groupField}  formData={formData}  handleChange={handleChange} handleSubmit={submitIntro} setFormData={setFormData} heading="Add Intro"/>
         </>
     )
 }

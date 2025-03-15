@@ -7,9 +7,23 @@ import Icon from "../../atoms/icons/Icon"
 import styles from "./About.module.scss"
 import flexStyles from "../../styles/flexStyle.module.scss"
 import modalEvent from "../../utils/Event"
+import { useEffect, useState } from "react"
 
-export default function About({data={}}){
-    
+export default function About(){
+    const [aboutData, setAboutData] = useState(() => {
+        const data = localStorage.getItem("aboutData");
+        return data ? JSON.parse(data) : {};
+    });
+    useEffect(() => {
+        const addAboutData=(e)=>{
+            setAboutData(e);
+        }
+        modalEvent.on("addAboutData", addAboutData)
+        return () => {
+            modalEvent.off("addAboutData", addAboutData)
+        }
+    }, [])
+
     const left=[{type:"text",props:{children:"About"}}]
     const right=[{id:"editAbtBtn",type:Button,props:{type:"icon",handleClick:addModal,children:<Icon icon="edit"/>}}]
     const skillHeaderleft=[{type:Icon,props:{icon:"diamond"}},{type:"text",props:{children:"Top Skills"}}];
@@ -19,7 +33,7 @@ export default function About({data={}}){
         
         modalEvent.emit("activeModal","about")
     }
-    let topSkillList=data.skillList || [];
+    let topSkillList=aboutData.skillList || [];
     return(
         
         <div id="about" className={styles.about}>
@@ -27,7 +41,7 @@ export default function About({data={}}){
             <Para
                 id="aboutText"
                 className={styles.aboutText}
-                text={data.aboutContent}
+                text={aboutData.aboutContent}
             />
             <div id="aboutSkills" className={styles.aboutSkills}>
                 <Header leftContent={skillHeaderleft} rightContent={SkillsHeaderRight} contentSize="s" />

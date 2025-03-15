@@ -7,12 +7,29 @@ import Button from "../../atoms/Button/Button"
 import Icon from "../../atoms/icons/Icon"
 import flexStyles from "../../styles/flexStyle.module.scss"
 import styles from "./Education.module.scss"
-export default function Education({data}){
+import { useEffect, useState } from "react"
+export default function Education(){
+    const [education, setEducation] = useState(() => {
+        const data = localStorage.getItem("educationData");
+        return data ? JSON.parse(data) : [];
+      });
+
+    useEffect(() => {
+        const addEducationData = (e) => {
+            setEducation(prev => [...prev, e]);
+        };
+        modalEvent.on("addEducation", addEducationData)
+        return () => {
+
+            modalEvent.off("addEducation", addEducationData);
+        }
+    }, [])
     
     function addModal(){
         
         modalEvent.emit("activeModal","education")
     }
+    
     //let data=[{school:"LNMIIT",branch:"cse",year:"2021-2025",grade:"8.4"},{school:"LNMIIT",branch:"cse",year:"2021-2025",grade:"8.4"}]
     
     const left=[{type:"text",props:{children:"Education"}}]
@@ -22,7 +39,7 @@ export default function Education({data}){
         <div id="education" className={styles.education}>
             <Header leftContent={left} rightContent={right} />
             <div id="educationContentContainer">        
-                {data.map((content)=>(<Institute key={content.school} school={content.school} branch={content.degree} year={{startMonth:content.startMonth,endMonth:content.endMonth,startYear:content.startYear,endYear:content.endYear}} grade={`Grade: ${content.grade}`}/>))}
+                {education.map((content)=>(<Institute key={content.school} school={content.school} branch={content.degree} year={{startMonth:content.startMonth,endMonth:content.endMonth,startYear:content.startYear,endYear:content.endYear}} grade={`Grade: ${content.grade}`}/>))}
             </div> 
         </div>
         </>

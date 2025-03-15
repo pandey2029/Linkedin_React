@@ -10,7 +10,8 @@ import FormHeader from "../../formBuilder/FormHeader";
 import { useState } from "react";
 import modalEvent from "../../../utils/Event";
 
-export default function AboutData({aboutData}){
+export default function AboutData(){
+    const aboutData=JSON.parse(localStorage.getItem("aboutData")) || {}
     const field={
         id:aboutStyles.content,
         label:"You can write about your years of experience, industry, or skills. People also talk about their achievements or previous job experiences.",

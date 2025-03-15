@@ -16,15 +16,12 @@ export default function Form(props) {
     functionMapper.set("textarea", TextArea);
     functionMapper.set("checkbox", CheckBox);
 
-    function handleSubmit(e) {
-      Submit(props.storageName,props,e);
-    }
-
+    
     return (
         <div id={styles.modal}>
             <div id={styles.tab}>
                 <FormHeader heading={props.heading} />
-                <form onSubmit={handleSubmit} className={styles.form}>
+                <form onSubmit={props.handleSubmit} className={styles.form}>
                     {props.fields.map((groupField) => (
                         <div key={`row${groupField[0].rowOrder}`} className={groupField.length > 1 ? styles.modalSelect : ""}>
                             {groupField.map((field) => {
