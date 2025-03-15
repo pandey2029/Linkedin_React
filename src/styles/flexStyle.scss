@@ -1,0 +1,9 @@
+@import "./mixins.scss";
+//use atuse
+
+.flexColumn {
+    @include flex(column, 0.5rem,null, center);
+}
+.flexRow{
+    @include flex(row,0.5rem,center,null)
+}

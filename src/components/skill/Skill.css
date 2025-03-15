@@ -1,0 +1,25 @@
+#skill{
+    background-color:white;
+    
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    
+}
+.skill{
+    padding:1rem;
+    padding-top:1.2rem;
+    padding-bottom: 1.2rem;
+    border-top:solid rgba(0, 0, 0, 0.2) 1px;
+    
+}
+#skillsFooter{
+    display:flex;
+    justify-content: center;
+    align-items: center;;
+    padding:1rem;
+    padding-top:0.7rem;
+    padding-bottom: 0.7rem;
+    border-top:solid rgba(0, 0, 0, 0.2) 1px;
+    cursor: pointer;
+}

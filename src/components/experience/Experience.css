@@ -1,0 +1,52 @@
+.companyImage{
+    width: 3rem;
+    height: 3rem;
+}
+.companyAbout{
+    display:flex;
+    flex-direction: column;
+    margin-left:1rem;
+    gap:0.5rem;
+}
+.experienceTabHeader{
+    display: flex;;
+    padding-left: 1rem;;
+}
+.experienceDetail{
+    display:flex;
+    flex-direction: column;
+    gap:0.2rem;
+    padding: 1rem;;
+    padding-left: 2rem;;
+    margin-left:2.5rem;
+    border-left:solid black 1px;
+    position: relative;
+    
+}
+.experienceDetailWrapper{
+    
+    display: flex;
+    flex-direction: column;
+}
+#experience{
+    padding-left: 1rem;
+    padding-right:1rem;
+}
+.experienceDetail::before {
+    content: ''; 
+    top:11%;
+    
+   
+    left:-0.75rem;
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    border:solid white 0.5rem;
+   
+    border-radius: 50%; 
+    background-color: black; 
+  }
+#experience{
+    padding-bottom: 2rem;
+    
+}

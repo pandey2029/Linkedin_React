@@ -1,0 +1,297 @@
+#activity{
+    background-color:white;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 1rem;
+    
+
+}
+#activity h2{
+    font-size:var(--large);
+    margin: 0;;
+}
+#activityHeader{
+    
+    margin-bottom: 1rem;;
+
+}
+#activityHeaderLeft{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    
+    
+}
+#activityHeaderRight{
+    display: flex;
+    gap:2rem;
+    align-items: center;
+    
+}
+#createPost{
+    border-radius: 1.5rem;
+    
+    border: solid var(--blue) 1px;
+    color: var(--blue);
+}
+#followers{
+   color: var(--blue);
+   cursor: pointer;
+}
+#followers:hover{
+    text-decoration: underline;
+}
+#activities{
+    margin-top:1rem;
+    display: flex;
+    gap:0.2rem;
+}
+.activityButton{
+    padding: 1rem;;
+    padding-top: 0.5rem;;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;;
+    border-radius: 1rem;
+    border:0;
+    border: solid var(--gray) 1px;
+    cursor: pointer;
+
+}
+.activityButtonActive{
+    background-color: var(--blue);
+    color:white;
+}
+.commentsBody{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: solid var(--gray) 1px;;
+}
+.commentsHeader{
+    display: flex;
+    gap:0.3rem;
+    margin-bottom: 0.7rem;
+    color: var(--gray);
+    
+}
+#commentsFooter{
+    display: flex;
+    align-items: center;;
+    justify-content: center;;
+    padding-top:1rem;
+    color: var(--gray);
+    font-weight: 600;
+    font-size: 1rem;
+    
+}
+#commentsFooterArrow{
+    margin-left: 0.5rem;;
+}
+#comments{
+
+    margin-bottom: 2rem;;
+}
+#aboutHeading,#activityHeader,#experienceHeader{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.post{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;;
+}
+.wrapper1{
+    display: flex;
+    align-items: center;
+}
+.headerLeft{
+    display: flex;
+    gap:0.5rem;
+}
+.postHeader{
+    display: flex;
+    justify-content: space-between;
+    margin-top:1rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+}
+.headerPhoto{
+    width:3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+}
+.public{
+    width:1rem;
+    height:1em;
+}
+.wrapper1{
+    display: flex;
+    align-items: center;;
+}
+.postName{
+    font-size: 1rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+.relation{
+    font-size: var(--small);
+
+}
+.postAbout{
+    font-size: var(--small);
+}
+.postTime{
+    font-size:var(--small);
+    margin-right: 0.2rem;
+}
+.postContent{
+    margin-bottom: 1rem;;
+    
+}
+.contentWrapper{
+    margin:1rem;
+    margin-bottom: 0.5rem;;
+    display: flex;
+    flex-direction: column;
+}
+.contentPhoto{
+    
+    box-sizing: border-box;
+    width:25rem;
+    border: solid black 1px;
+
+   
+    align-self: center;
+}
+#posts{
+    background-color: white;
+    
+    height: fit-content;
+    display:flex;
+    overflow-x: auto;
+    gap:1rem;
+    margin-top:2rem;
+    
+}
+.post{width:30rem;
+    background-color: white;
+    height: fit-content;
+    border: solid black 1px;
+}
+.contentFooter{
+    margin-left:1rem;
+    margin-right:1rem;
+    padding-bottom: 0.5rem;;
+}
+.reactionSymbol{margin-right: -0.5rem;}
+
+.reactions{
+    display:flex;
+}
+.reactionNumber{
+    margin-left:0.8rem;
+}
+.contentFooter{
+    display:flex;
+    justify-content: space-between;
+    border-bottom: solid black 1px;
+}
+.postFooter{
+    display: flex;
+    justify-content: space-around;
+    padding:1rem;
+}
+.symbolWrapper{
+    display:flex;
+    font-size: var(--med);;
+}
+.send,.repost,.comment,.like{
+    width:1rem;
+    margin-right: 0.3rem;;
+}
+#headerRight{
+    margin-left: 1rem;;
+}
+#images{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);;
+    grid-auto-rows:10rem;;
+    gap:0.8rem;
+    
+    margin-top:2rem;
+}
+.multiImage,.singleImage{
+    width: 100%;
+    height: 100%;
+    background-size: cover; 
+  background-position: center; 
+  border-radius: 0.8rem;
+
+}
+
+#image1{
+    background-image: url("https://media.licdn.com/dms/image/v2/D5622AQFIJNAwSeC0Ww/feedshare-shrink_480/feedshare-shrink_480/0/1720528302421?e=1740614400&v=beta&t=7pHYeQ7qcqCvlz9zv9pOjdfXF6RPIkGOOrE1FdAvJ-4"); 
+}
+#image2{
+    background-image: url("https://media.licdn.com/dms/image/v2/D5622AQE8uaypxtE7bg/feedshare-shrink_480/feedshare-shrink_480/0/1719029016861?e=1740614400&v=beta&t=Z7Hd5a7bf_jOBvXhrziSduEg5wFjaIk4Wx-nyHI0JEs");
+}
+#image3{
+    background-image: url("https://media.licdn.com/dms/image/v2/D5622AQFHcAcmZ1pZjA/feedshare-shrink_480/feedshare-shrink_480/0/1718932508574?e=1740614400&v=beta&t=0NN9B0yjcjG2TyiD_DmV_dei13qhAj5rUJYf2rckras");
+}
+#image4{
+    background-image: url("https://media.licdn.com/dms/image/v2/D5622AQGtWrL4b64b3A/feedshare-shrink_480/feedshare-shrink_480/0/1718456931213?e=1740614400&v=beta&t=frUww1lgvzUVJDd6T4sGhyh7HdMvivWiWfzkX-zuxG8");
+}
+#image5{
+    background-image: url("https://media.licdn.com/dms/image/v2/D5622AQGpZJ5fIfzTOw/feedshare-shrink_480/feedshare-shrink_480/0/1719684380832?e=1740614400&v=beta&t=F_8sXomLJlIx-OWlpJS24jO7v-QiYjspPd3bIkrQ0hk");
+}
+.multiImage{
+    position: relative;
+}
+.multiImage strong{
+    position: absolute;
+    color:white;
+    font-size:0.9rem;
+    padding: 0.4rem;
+    background-color:var(--gray);
+    left:0.4rem;
+    top:0.4rem;
+    border-radius: 0.4rem;;
+}
+.grade{
+    font-size: 0.9rem;;
+}
+#education ,#skills,#experience{
+    background-color:white;
+    
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    
+
+}
+.material-icons{
+    cursor: pointer;
+}
+#skills,#experience{
+    padding:0;
+}
+
+
+
+.sectionHeaderLeft{
+    font-size:var(--large);
+    font-weight: 600;
+}
+.sectionHeaderRight{
+    display:flex;
+    gap:2rem;
+}
+
+.paddingClass{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;;
+}
