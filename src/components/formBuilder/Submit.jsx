@@ -1,4 +1,4 @@
-import modalEvent from "../../utils/Event";
+import modalEvent from "../../utils/event";
 
 export default function Submit(type, formData,e) {
     switch (type) {

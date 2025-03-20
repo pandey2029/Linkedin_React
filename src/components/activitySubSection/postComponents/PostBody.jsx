@@ -5,14 +5,14 @@ import symbol3 from "../../images/symbol3.svg"
 import postPhoto2 from "../../images/postPhoto2.jpeg"
 import Image from "../../../atoms/img/Image"
 import styles from "../../activity/Activity.module.scss"
-export default function PostBody({postContent}){
+export default function PostBody({postContent,postPhoto}){
     return(
         <>
             <div className={styles.contentWrapper}>
                 <div className={styles.postContent}>
                     {postContent}                            
                 </div>
-                <Image className={styles.contentPhoto} src={postPhoto2} />
+                <Image className={styles.contentPhoto} src={postPhoto} />
             </div>
             <div className={styles.contentFooter}>
                 <div className={styles.reactions}>

@@ -5,7 +5,7 @@ import FormHeader from "../../formBuilder/FormHeader";
 import styles from "../../formBuilder/Form.module.scss"
 import skillStyles from "./SkillData.module.scss"
 import { useEffect, useState } from "react";
-import modalEvent from "../../../utils/Event";
+import modalEvent from "../../../utils/event";
 export default function SkillData(){
     const skillData=JSON.parse(localStorage.getItem("skillData")) || []
     const [skillList,setSkillList]=useState(skillData);

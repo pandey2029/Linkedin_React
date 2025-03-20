@@ -6,10 +6,13 @@ import Button from "../../atoms/Button/Button"
 import Icon from "../../atoms/icons/Icon"
 import styles from "./Activity.module.scss"
 import Header from "../../atoms/Header/Header"
+import modalEvent from "../../utils/event"
+
 export default function Activity(){
+    const create=()=>{modalEvent.emit("activeModal", "post");}
     const [active,setActive]=useState("comments");
     const left=[{type:"text",props:{children:"Activity"}}];
-    const right=[{type:Button,props:{type:"secondary",handleClick:()=>{},children:"Create a post"}},{type:Button,props:{type:"icon",children:<Icon icon="edit"/>}}]
+    const right=[{type:Button,props:{type:"secondary",handleClick:create,children:"Create a post"}},{type:Button,props:{type:"icon",children:<Icon icon="edit"/>}}]
     
     
     return(

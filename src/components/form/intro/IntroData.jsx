@@ -1,23 +1,18 @@
 import { useEffect, useState } from "react";
 import Form from "../../formBuilder/Form";
-import modalEvent from "../../../utils/Event";
+import modalEvent from "../../../utils/event";
 
 export default function IntroData(){
-    const fields=[
-        {type:"input",label:"First Name",id:"firstName",placeholder:"",rowOrder:1,columnOrder:0},
-        {type:"input",label:"Last Name",id:"lastName",placeholder:"",rowOrder:2,columnOrder:0},
-        {type:"textarea",label:"Headline",id:"headline",placeholder:"",rowOrder:3,columnOrder:0},
-        {type:"select",label:"Current Position",id:"currentPosition",placeholder:"",rowOrder:4,columnOrder:0,options:[]},
-        {type:"select",label:"School",id:"school",placeholder:"",rowOrder:5,columnOrder:0,options:[]},
-        {type:"input",label:"Country/Region",id:"country",placeholder:"",rowOrder:6,columnOrder:0},
-        {type:"input",label:"City",id:"city",placeholder:"",rowOrder:7,columnOrder:0},
-    ]
+    const company=JSON.parse(localStorage.getItem("experienceData"));
+    const school=JSON.parse(localStorage.getItem("educationData"));
+    
+
     
     const groupField=[[{type:"input",label:"First Name",id:"firstName",placeholder:"",rowOrder:1,columnOrder:0}],
                 [ {type:"input",label:"Last Name",id:"lastName",placeholder:"",rowOrder:2,columnOrder:0}],
                 [{type:"textarea",label:"Headline",id:"headline",placeholder:"",rowOrder:3,columnOrder:0}],
-                [{type:"select",label:"Current Position",id:"currentPosition",placeholder:"",rowOrder:4,columnOrder:0,options:[]}],
-                [{type:"select",label:"School",id:"school",placeholder:"",rowOrder:5,columnOrder:0,options:[]}],
+                [{type:"select",label:"Current Position",id:"currentPosition",placeholder:"",rowOrder:4,columnOrder:0,options:["Please select",...company.map((comp)=>comp.company)]}],
+                [{type:"select",label:"School",id:"school",placeholder:"",rowOrder:5,columnOrder:0,options:["Please select",...school.map((sch)=>sch.school)]}],
                 [{type:"input",label:"Country/Region",id:"country",placeholder:"",rowOrder:6,columnOrder:0}],
                 [{type:"input",label:"City",id:"city",placeholder:"",rowOrder:7,columnOrder:0}]
                ]

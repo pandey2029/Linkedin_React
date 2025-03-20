@@ -2,22 +2,33 @@
 /* eslint-disable react/prop-types */
 
 
-import styles from "./Intro.module.scss"
+import styles from "./intro.module.scss"
 import flexStyles from "../../styles/flexStyle.module.scss"
 import defaultImage from "../images/defaultPhoto.png"
 import backgroundImage from "../images/backgroundimg.jpg"
 import Image from "../../atoms/img/Image";
 import Button from "../../atoms/Button/Button";
 import Icon from "../../atoms/icons/Icon";
-import modalEvent from "../../utils/Event";
+import modalEvent from "../../utils/event";
 import ExperienceInfo from "./ExperienceInfo";
 import Header from "../../atoms/Header/Header";
+import axios from "axios";
+
 import { useEffect, useState } from "react";
+
+
 export default function Intro({handleProfile}){
-    const [intro, setIntro] = useState(() => {
-        const data = localStorage.getItem("introData");
-        return data ? JSON.parse(data) : {};
-    });
+    const [intro, setIntro] = useState({});
+    useEffect(()=>{
+        axios.get("https://apigenerator.dronahq.com/api/g1YizjYj/introData")
+            .then(response=>setIntro(response.data[0]))
+            .catch(error=>console.error("Data can't be fetched",error))
+    },[])
+    // const [intro, setIntro] = useState(() => {
+    //     const data = localStorage.getItem("introData");
+    //     return data ? JSON.parse(data) : {};
+    // });
+    
     const [profilePhoto,setProfilePhoto]=useState(() => {
         return JSON.parse(localStorage.getItem("profilePhoto")) || defaultImage;
     })

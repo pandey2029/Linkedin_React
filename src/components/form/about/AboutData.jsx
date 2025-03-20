@@ -7,8 +7,8 @@ import aboutStyles from "./AboutData.module.scss"
 import Icon from "../../../atoms/icons/Icon";
 import Button from "../../../atoms/Button/Button";
 import FormHeader from "../../formBuilder/FormHeader";
-import { useState } from "react";
-import modalEvent from "../../../utils/Event";
+import { useCallback, useState } from "react";
+import modalEvent from "../../../utils/event";
 
 export default function AboutData(){
     const aboutData=JSON.parse(localStorage.getItem("aboutData")) || {}
@@ -26,15 +26,20 @@ export default function AboutData(){
     const right=[{id:styles.quit,type:Button,props:{type:"primary",children:<Icon icon="close"/>}}]
     const [skillList,setSkillList]=useState(aboutData.skillList || []);
     const [aboutContent,setAboutContent]=useState(aboutData.aboutContent || "");
-    function handleChange(e){
+
+    const handleChange =(e) => {
         setAboutContent(e.target.value);
-    }
-    function submit(){
-        modalEvent.emit("addAboutData",{skillList:skillList,aboutContent:aboutContent})
-        
-        localStorage.setItem("aboutData", JSON.stringify({skillList:skillList,aboutContent:aboutContent}));
-        modalEvent.emit("activeModal","");
-    }
+      };
+      
+    
+    const submit = () => {
+        modalEvent.emit("addAboutData", { skillList, aboutContent });
+        localStorage.setItem(
+          "aboutData",
+          JSON.stringify({ skillList, aboutContent })
+        );
+        modalEvent.emit("activeModal", "");
+      };
     return(
         
             <div id={styles.modal}>

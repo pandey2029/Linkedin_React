@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import modalEvent from "../../utils/Event";
+import modalEvent from "../../utils/event";
 import Header from "../../atoms/Header/Header";
 import Icon from "../../atoms/icons/Icon";
 import Button from "../../atoms/Button/Button";

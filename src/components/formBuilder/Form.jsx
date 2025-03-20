@@ -7,7 +7,7 @@ import CheckBox from "../../molecule/inputComponents/CheckBox";
 import styles from "./Form.module.scss"
 import FormHeader from "./FormHeader";
 import Footer from "./Footer";
-import modalEvent from "../../utils/Event";
+import modalEvent from "../../utils/event";
 import Submit from "./Submit";
 export default function Form(props) {
     const functionMapper = new Map();

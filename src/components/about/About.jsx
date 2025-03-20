@@ -6,7 +6,7 @@ import Icon from "../../atoms/icons/Icon"
 
 import styles from "./About.module.scss"
 import flexStyles from "../../styles/flexStyle.module.scss"
-import modalEvent from "../../utils/Event"
+import modalEvent from "../../utils/event"
 import { useEffect, useState } from "react"
 
 export default function About(){

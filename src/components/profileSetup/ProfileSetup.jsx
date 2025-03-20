@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "./ProfileSetup.css"
+import "./profileSetup.css"
 
 
 export default function ProfileSetup(props){

@@ -1,6 +1,6 @@
 
 import Header from "../../atoms/Header/Header"
-import modalEvent from "../../utils/Event"
+import modalEvent from "../../utils/event"
 
 import Institute from "./Institute"
 import Button from "../../atoms/Button/Button"

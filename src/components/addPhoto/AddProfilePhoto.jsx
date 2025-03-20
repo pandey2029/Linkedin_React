@@ -4,8 +4,9 @@ import Header from "../../atoms/Header/Header";
 import Image from "../../atoms/img/Image";
 import Input from "../../atoms/input/Input";
 import defaultImage from "../images/defaultPhoto.png"
-import modalEvent from "../../utils/Event";
+import modalEvent from "../../utils/event";
 import styles from "./AddProfilePhoto.module.scss"
+
 export default function AddProfilePhot(){
     let profilePhoto=JSON.parse(localStorage.getItem("profilePhoto")) || defaultImage;;
     const [displayPhoto,setDisplayPhoto]=useState(profilePhoto);

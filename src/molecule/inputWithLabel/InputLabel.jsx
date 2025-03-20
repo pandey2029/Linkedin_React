@@ -6,7 +6,7 @@ export default function InputLabel({field,eventHandler={},data,style={},attribut
     return(
         <>
             <Label id={field.id} style={style} label={field.label}>
-                <Input attributes={attributes} eventHandler={eventHandler} data={data ? data[field.id]:""}/>
+                <Input id={field.id} attributes={attributes} eventHandler={eventHandler} data={data ? data[field.id]:""}/>
             </Label>
         </>
     )

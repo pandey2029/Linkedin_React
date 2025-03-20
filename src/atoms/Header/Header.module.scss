@@ -1,9 +1,10 @@
+$black: #000000; 
 
 .border-all {
-  border: solid black 1px;
+  border: solid $black 1px;
 }
 .border-bottom {
-  border-bottom: solid black 1px;
+  border-bottom: solid $black 1px;
 }
 @mixin sectionFlex {
   display: flex;

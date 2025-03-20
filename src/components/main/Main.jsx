@@ -4,7 +4,7 @@ import Intro from '../introduction/Intro';
 import About from '../about/About';
 import Activity from '../activity/Activity';
 import ProfileSetup from '../profileSetup/ProfileSetup';
-import "./Main.css";
+import "./main.css";
 import { useEffect, useState } from 'react';
 import ExperienceData from '../form/experience/ExperienceData';
 import EducationData from '../form/education/EducationData';
@@ -14,11 +14,12 @@ import Experience from '../experience/Experience';
 import Education from '../education/Education';
 import Skill from '../skill/Skill';
 import Modal from '../modal/Modal';
-import modalEvent from '../../utils/Event';
+import modalEvent from '../../utils/event';
 import AboutData from '../form/about/AboutData';
 import SkillData from "../form/skill/SkillData"
 import AddProfilePhoto from '../addPhoto/AddProfilePhoto';
 import defaultImage from "../images/defaultPhoto.png"
+import AddPost from '../activity/addPost/AddPost';
 
 export default function Main(){
 
@@ -42,6 +43,7 @@ componentMap.set("intro",<IntroData/>)
 componentMap.set("about",<AboutData/>)
 componentMap.set("skill",<SkillData/>)
 componentMap.set("profilePhoto",<AddProfilePhoto/>)
+componentMap.set("post",<AddPost/>)
 componentMap.set("","")
 const [activeModal,setActiveModal]=useState("")
 
@@ -65,7 +67,6 @@ useEffect(()=>{
 
     
 },[])
-
 
 
 
