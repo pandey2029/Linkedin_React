@@ -1,0 +1,59 @@
+$blue: #0a66c2; 
+$color-tertiary: #000000bf; 
+$black: #000000; 
+
+@mixin button-base {
+  font-size: 1rem;
+  border-radius: 1rem;
+  border: 0;
+  width: fit-content;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.primary {
+  @include button-base;
+  background-color: $blue;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #08437e; 
+  }
+}
+
+.secondary {
+  @include button-base;
+  color: $blue;
+  border: solid $blue 2px;
+  background-color: transparent;
+
+  &:hover {
+    border: solid #08437e 2px; 
+    color: #08437e;
+    background-color: #0a66c217;
+  }
+}
+
+.tertiary {
+  @include button-base;
+  color: $color-tertiary;
+  border: solid $color-tertiary 2px;
+  background-color: transparent;
+
+  &:hover {
+    border: solid $black 2px;
+    color: $black;
+  }
+}
+
+.iconButton {
+  border-radius: 50%;
+  background-color: #ffffff; 
+  border: 0;
+  padding: 0.5rem;
+  align-items: center;
+
+  &:hover {
+    background-color: #bcaeae50; 
+  }
+}

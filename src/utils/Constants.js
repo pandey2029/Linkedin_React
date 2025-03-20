@@ -1,0 +1,3 @@
+export const MONTHS=["Month","Jan","Feb","Mar","Apr","May","June","July","August","Sep","Oct","Nov","Dec"];
+export const YEAR=["Year","2017","2018","2019","2020","2021","2022","2023","2024","2025"];
+export const IMAGES=[{id:"image1",data:""},{id:"image2",data:"+2"},{id:"image3",data:""},{id:"image4",data:""},{id:"image5",data:""},{id:"image1",data:""},{id:"image2",data:""},{id:"image3",data:""},{id:"image4",data:""},{id:"image5",data:""},{id:"image1",data:"+1"},{id:"image2",data:""},{id:"image3",data:""},{id:"image4",data:""},{id:"image5",data:""},{id:"image1",data:"+5"}]

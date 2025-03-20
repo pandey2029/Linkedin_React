@@ -1,0 +1,139 @@
+:root {
+    --blue:#0a66c2;
+    --gray:rgba(0, 0, 0, 0.6);
+    --large:1.25rem;
+    --med:0.875rem;
+    --small:0.75rem;
+  }
+body,html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x:hidden;
+    overflow-y:auto;
+    min-width: 1300px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(211, 211, 211, 0.311);
+    
+}
+#logo{
+    fill: var(--blue);; 
+      
+}
+#logoContainer{
+    height: 45px;;
+    width: 45px;
+    padding: 0;
+    margin-right: 0.5rem;
+}
+header{
+    display: flex;
+    
+    height: 3.3125rem;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-left: 12rem;
+    padding-right: 12rem;
+    align-items: center;;
+    color:#00000099;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    position: fixed;
+    top:0;
+    border-bottom:solid #00000018 1px;
+    z-index: 5;
+    background-color: white;
+    
+}
+#searchWrapper{
+    display: flex;
+    width: fit-content;
+    align-items: center;;
+
+}
+#iconWrapper{
+    display: flex;
+    gap: 0.9rem;
+    width: fit-content;
+    height: 100%;
+    align-items: center;
+}
+.searchBarContainer{
+    height: 2.3rem;
+    width:17.5em;
+    position: relative;
+    border:0;
+    transition: width 0.3s;
+    
+       
+}
+.searchBarContainer:hover{
+    width:20rem;
+}
+.searchBar{
+    height: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.4rem;
+    padding-left: 2rem;
+    border: 0;
+    background-color: rgb(237, 243, 248);
+    border-radius:0.3rem;
+    
+}
+.paddingClass{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;;
+}
+.search-icon{
+    position: absolute;
+    left:0.4rem;
+    top:0.4rem;
+}
+.iconContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 4rem;
+    font-size: var(--small);
+}
+.iconContainer img{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    
+}
+.iconContainer:hover{
+    color: black;
+}
+
+.headerText{
+    display: flex;
+    align-items: center;
+    
+}
+#business{
+    width:6rem;
+    padding-left: var(--small);
+    height: 100%;
+    border-left: solid #00000018 1px;;
+}
+#premium{
+    margin-left: 0.5rem;
+    width: 7.1rem;
+}
+
+#headerExtra{
+    display: flex;
+    width:fit-content;
+    height: 100%;
+    align-items: center;
+    
+}
+#dropDown{
+    font-size: 1rem;;
+}
